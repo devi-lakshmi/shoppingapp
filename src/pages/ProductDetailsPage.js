@@ -11,8 +11,8 @@ export default function  ProductDetailsPage() {
     const {id} =useParams();
 
     const dispatch = useDispatch();
-   const product= useSelector( selectProductById);
-  
+   const productDetails = useSelector( selectProductById);
+  console.log("productDetails" + productDetails)
  
    useEffect(() => {
 dispatch(fetchDataById(id))
@@ -23,13 +23,19 @@ dispatch(fetchDataById(id))
     
 
 return(
-  
-    <div>    
+ 
+   <div key ={productDetails.id}>
+      <h3>{productDetails.name}</h3>
+            <img src={productDetails.imageUrl}  alt ="" width= "100px" height= "130px"/>
+      
+      <h2>{productDetails.price}</h2>
+      <p>{productDetails.description}</p>
+       
 
-
-   
-    
-    </div>
-  )
+      
+      <button onClick={() => {}}>add to cart</button>
+      </div>
+      
+  );
 }
     

@@ -10,13 +10,11 @@ export const productDetailsSlice = createSlice({
 
       productDetailsFetched :(state,action) =>{
         console.log("productsFetched action", action.payload);
-      state.product =[...action.payload];
-      },
-    
+      state.product =action.payload;
+      },    
     },
+    
+  });
 
-
-
-    })
     export const { productDetailsFetched } =productDetailsSlice.actions;
 export default productDetailsSlice.reducer;

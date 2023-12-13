@@ -1,2 +1,5 @@
 
-    export const selectProductById= (reduxState) => reduxState.productDetails.product;
+    export const selectProductById =(reduxState) => {
+    return reduxState.productDetails.product
+    
+}
