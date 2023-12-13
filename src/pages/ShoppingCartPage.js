@@ -1,6 +1,6 @@
 import React from "react";
 import {  useSelector } from "react-redux";
-import { selectCartData, selectTotalCartPrice } from "../store/cart/selector"
+import { selectCartData, selectTotalCartPrice, calculateQuantityByProduct } from "../store/cart/selector"
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
@@ -12,6 +12,9 @@ export default function  ShoppingCartPage() {
 const productDetails = useSelector( selectCartData); 
  
 const totalPrice = useSelector(selectTotalCartPrice);
+
+const calculateProductsQuantity = useSelector( calculateQuantityByProduct ); 
+
 
  const logDetails = (productDetails) => {
   productDetails.forEach(product => {
@@ -50,7 +53,7 @@ const cards = productDetails.map(product =>(
 return(
  <div><Link to={`/products`} >Products List page</Link> 
 
- <p>My Shoppoing cart overview</p> 
+ <p onLoad={()=>calculateProductsQuantity}>My Shoppoing cart overview</p> 
 
  <div className=" row">
  

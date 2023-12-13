@@ -11,3 +11,20 @@ export const selectTotalCartPrice = (reduxState) =>
     });
     return totalPrice;
 }
+
+export const calculateQuantityByProduct = state => {
+  const items = state.cart;
+  const quantityByProduct = {};
+
+  // Iterate through items and calculate quantity by product
+  items.forEach(item => {
+    if (!quantityByProduct[item.id]) {
+      quantityByProduct[item.id] = item.quantity;
+    } else {
+      quantityByProduct[item.id] += item.quantity;
+      console.log(item.quantity)
+    }
+  });
+
+  return quantityByProduct;
+};

@@ -4,25 +4,25 @@
 ### Did you use ChatGPT or a similar tool? 
 [] Yes, and I added a sources.md file that includes more details on how I used it
 
-[] No
+[X] No
 
 ### Which required features did you complete?
-[] Feature 1 - Product list page
+[X] Feature 1 - Product list page
 
-[] Feature 2 - Product details page
+[X] Feature 2 - Product details page
 
-[] Feature 4 - Add to cart
+[X] Feature 4 - Add to cart
 
-[] Feature 5 - Go to cart with X items
+[X] Feature 5 - Go to cart with X items
 
-[] Feature 7 - Cart page
+[X] Feature 7 - Cart page
 
-[] Feature 8 - Checkout products
+[X] Feature 8 - Checkout products
 
 ### Which bonus features did you complete?
 [] Feature 3 - Product list page filtering and sorting
 
-[] Feature 6 - Cart details on products
+[X] Feature 6 - Cart details on products
 
 [] Feature 9 - Adjust items in cart
 
@@ -46,7 +46,6 @@
 ### Reflection 
 Take some time to think about your process during this assessment: What worked? What could you have done better? What should you keep doing?
 
-// ANSWER HERE
+Tasks are really good to improve what have learned in class.
 
 ### Any other feedback?
-// ANSWER HERE
