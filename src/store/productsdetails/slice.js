@@ -9,7 +9,6 @@ export const productDetailsSlice = createSlice({
      reducers:{
 
       productDetailsFetched :(state,action) =>{
-        console.log("productsFetched action", action.payload);
       state.product =action.payload;
       },    
     },

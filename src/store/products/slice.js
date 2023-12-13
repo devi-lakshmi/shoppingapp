@@ -9,7 +9,6 @@ export const productsSlice = createSlice({
     },
     reducers:{
        productsFetched :(state,action) =>{
-        console.log("productsFetched action", action.payload);
         state.productList = [...action.payload];
       },
     

@@ -25,8 +25,6 @@ dispatch(fetchData)
 
    }, []);
 
-   console.log("cartProducts  "+cartProducts)
-  
   const addToCart = (product) => {
     dispatch(addToCartFetched(product));
   }
@@ -55,15 +53,16 @@ dispatch(fetchData)
         
         
 ))
-return(
-  <div>
-<Link to={`/products/cart`} >My Cart {cartProducts.length}</Link>
+return(<>
+<div>
+    <Link to={`/products/cart`} >My Cart {cartProducts.length}</Link>
+</div>
 <h1>product Dashbord</h1>
 
  <div className=" row">
   
   {cards}
   </div>
-    </div>
+    </>
   )
 }

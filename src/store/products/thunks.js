@@ -8,7 +8,6 @@ export const fetchData = async (dispatch,getState) => {
  
   try{ 
   const response = await axios.get(`${API_URL}/products`);
-  console.log("response"+ response)
   const productList = response.data;
   dispatch(productsFetched(productList));
 }
