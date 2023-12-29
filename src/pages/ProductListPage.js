@@ -4,11 +4,9 @@ import { useEffect } from "react";
 import { selectProductsList } from "../store/products/selector";
 import { fetchData } from "../store/products/thunks";
 import { Link } from "react-router-dom";
-import { addToCartFetched } from "../store/cart/slice";
-import {selectCartData } from "../store/cart/selector"
-
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { addToCartData, filterByCategory, sortByPrice } from "../store/products/slice";
 
 
 export default function  ProductListPage() {
@@ -17,52 +15,61 @@ export default function  ProductListPage() {
   
   const data = useSelector(selectProductsList);
 
-  const cartProducts = useSelector(selectCartData);
-
-  
- useEffect(() => {
+  useEffect(() => {
 dispatch(fetchData)
 
-   }, []);
+   }, [dispatch]);
 
   const addToCart = (product) => {
-    dispatch(addToCartFetched(product));
+    dispatch(addToCartData(product));
   }
+const handleSortByPrice =()=>{
+  dispatch(sortByPrice());
+}
+
+// const handleFilterByCategory = (category) =>{
+//   dispatch(filterBYcategory(category));
 
   const cards = data.map(product =>(
+<div key ={product.id}className ="col-md-3" style={{marginBottom:"10px"}}>
 
- <div className ="col-md-3" style={{marginBottom:"10px"}}>
-
- <Card key={product.id} className="h-100">
+ <Card id ={product.id}   className="h-100">
       <div className="text-center">
       <Card.Img variant="top" src={product.imageUrl}  style ={{width : "100px", height: "130px"}}/>
       </div>
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>
-          {product.price}
+         Euro:{product.price}
         </Card.Text>
         <Link to={`/products/${product.id}`}>show details</Link><br/>
       </Card.Body>
       <Card.Footer>
-        <Button onClick={()=>addToCart(product)}>Add to cart</Button>
+        
+        <Button onClick={()=>addToCart({...product , quantity:1}
+           )}>Add to cart</Button>
+      
+    
       </Card.Footer>
     </Card>
-
-   </div>   
-        
-        
-))
-return(<>
-<div>
-    <Link to={`/products/cart`} >My Cart {cartProducts.length}</Link>
-</div>
-<h1>product Dashbord</h1>
-
- <div className=" row">
+    
+ </div>  
+         
+  ))
+return(
+< div className=" row">
+     <header>
+   <button onClick={handleSortByPrice}>sort by price</button>  
+    </header>
+    <div>
+   <button onClick={() =>dispatch(filterByCategory({category:"categoryId"})
+   )}> categoryId</button>
+ </div> 
   
   {cards}
+   
+
   </div>
-    </>
+    
   )
 }

@@ -10,6 +10,8 @@ export const fetchData = async (dispatch,getState) => {
   const response = await axios.get(`${API_URL}/products`);
   const productList = response.data;
   dispatch(productsFetched(productList));
+
+
 }
 catch(e){
   console.log(e.message);

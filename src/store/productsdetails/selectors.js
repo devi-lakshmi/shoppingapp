@@ -1,5 +1,5 @@
 
     export const selectProductById =(reduxState) => {
-    return reduxState.productDetails.product
+    return reduxState.productDetails.product;
     
 }
