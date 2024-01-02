@@ -50,12 +50,14 @@ const cards = product.map(product =>(
                           </div>
                             <Button  onClick={()=>{ if(product.quantity>0){
                              dispatch(decreaseItemQuantity(product.id));}
-                            
+                            else{
+                              dispatch(remove(product.id));
+                            }
                             }}>-</Button>
                            
                            </Card.Footer>
                            </Card.Body>
-                         <Button onClick ={() =>dispatch(remove(product.id))} >Delete</Button>
+                         <Button onClick ={() =>dispatch(remove(product.id))} >Remove</Button>
                          </Card>
 
                        </div>   
@@ -72,6 +74,8 @@ return(
   {cards}
    </div>
   <button style ={{color :'blue'  , width:"200px"  }} >Total Price:{totalprice}</button> 
+   <button>checkout </button>
+   
    <div>
    <button style={{color:"red" , width:"200px"}} onClick={() =>dispatch(clear())} >Clearcart</button>
   </div>

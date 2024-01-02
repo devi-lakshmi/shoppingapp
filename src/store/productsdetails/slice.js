@@ -8,12 +8,12 @@ export const productDetailsSlice = createSlice({
     },
      reducers:{
 
-      productDetailsFetched :(state,action) =>{
+      productDetails:(state,action) =>{
       state.product =action.payload;
       },    
     },
     
   });
 
-    export const { productDetailsFetched } =productDetailsSlice.actions;
+    export const { productDetails } =productDetailsSlice.actions;
 export default productDetailsSlice.reducer;

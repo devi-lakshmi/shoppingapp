@@ -24,9 +24,6 @@ export const productsSlice = createSlice({
       state.cart.push(action.payload);
  }
   
-    // const priceArray =state.cart.map((obj =>obj.price));
-    //    state.totalPrice =priceArray.reduce((a,b)=>a+b);
-
   },  
     filterByCategory:(state,action)=>{
      state.filterByCategory = state.productList.filter((product) =>product.category === action.payload.category);
