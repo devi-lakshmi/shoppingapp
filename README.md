@@ -1,6 +1,5 @@
-#Shoppingapp
+## SHOPPingAPP 🍎
 
-## Product features 🍎
 ### 🍎 Feature 1 - Product list page
 - As a customer, I want to see an overview of the products available
 
