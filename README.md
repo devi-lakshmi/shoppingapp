@@ -45,7 +45,7 @@
  # API
 ## Setup
 You will be running this backend API locally on your own computers
-- You can find the backend API here: https://github.com/TechmongersNL/redux-webshop-backend/tree/master
+- You can find the backend API here: [https://github.com/TechmongersNL/redux-webshop-backend/tree/master](https://github.com/devi-lakshmi/shoppinapp-backend.git)
 - `Git clone <ssh link>` the repo above
 - `Cd` into the repo, then run `npm install`
 - In a new terminal, run `npm start`. This will start the local backend server
